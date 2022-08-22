@@ -27,89 +27,89 @@ const Holiday = () => {
   };
   return (
     <>
-    <Sidebar/>
-    <Container className="attendence">
-      <Row>
-        <Col lg={2}></Col>
-        <Col lg={8}>
-          <Breadcrumb>
-            <BreadcrumbItem>Dashboard</BreadcrumbItem>
-            <Breadcrumb.Item active>Holidays</Breadcrumb.Item>
-          </Breadcrumb>
-        </Col>
-        <Col lg={2}>
-          <button
-            className="add-btn"
-            onClick={() => {
-              handleAction("addHoliday");
-              setShow(true);
-            }}
-          >
-            Add Holiday
-          </button>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={2}></Col>
-        <Col lg={10}>
-      <Table bordered>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Holiday Date</th>
-            <th>Day</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>New Year</td>
-            <td>1 Jan 2019	</td>
-            <td>Sunday</td>
-           
-            <td>
-              <FontAwesomeIcon
-                onClick={() => setTooltip(!tooltip)}
-                icon={faEllipsisVertical}
-                className="vertical-icon"
-              ></FontAwesomeIcon>
-              <div
-                className={`dropdown-menu dropdown-menu-right ${tooltip}`}
-                x-placement="bottom-end"
-              >
-                <button
-                  class="dropdown-item"
-                  onClick={() => {
-                    handleAction("edit");
-                    setShow(true);
-                  }}
-                >
-                  Edit
-                </button>
-                <button
-                  class="dropdown-item"
-                  onClick={() => {
-                    handleAction("delete");
-                    setShow(true);
-                  }}
-                >
-                  Delete
-                </button>
-              </div>
-              <Popup
-                action={userAction}
-                show={show}
-                onHide={() => setShow(false)}
-              ></Popup>
-            </td>
-          </tr>
-        </tbody>
-      </Table>
-      </Col>
-      </Row>
-    </Container>
+      <Sidebar />
+      <Container className="attendence">
+        <Row>
+          <Col lg={2}></Col>
+          <Col lg={8}>
+            <Breadcrumb>
+              <BreadcrumbItem>Dashboard</BreadcrumbItem>
+              <Breadcrumb.Item active>Holidays</Breadcrumb.Item>
+            </Breadcrumb>
+          </Col>
+          <Col lg={2}>
+            <button
+              className="add-btn"
+              onClick={() => {
+                handleAction("addHoliday");
+                setShow(true);
+              }}
+            >
+              Add Holiday
+            </button>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={2}></Col>
+          <Col lg={10}>
+            <Table bordered>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Holiday Date</th>
+                  <th>Day</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>New Year</td>
+                  <td>1 Jan 2019	</td>
+                  <td>Sunday</td>
+
+                  <td>
+                    <FontAwesomeIcon
+                      onClick={() => setTooltip(!tooltip)}
+                      icon={faEllipsisVertical}
+                      className="vertical-icon"
+                    ></FontAwesomeIcon>
+                    <div
+                      className={`dropdown-menu dropdown-menu-right ${tooltip}`}
+                      x-placement="bottom-end"
+                    >
+                      <button
+                        class="dropdown-item"
+                        onClick={() => {
+                          handleAction("edit");
+                          setShow(true);
+                        }}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        class="dropdown-item"
+                        onClick={() => {
+                          handleAction("delete");
+                          setShow(true);
+                        }}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                    <Popup
+                      action={userAction}
+                      show={show}
+                      onHide={() => setShow(false)}
+                    ></Popup>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };

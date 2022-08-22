@@ -64,7 +64,7 @@ function Popup(props) {
   if (props.action === "addDepartment") {
     return (
       <>
-       <Modal show={props.show}>
+        <Modal show={props.show}>
           <Modal.Header>
             <Modal.Title>Add Department</Modal.Title>
           </Modal.Header>

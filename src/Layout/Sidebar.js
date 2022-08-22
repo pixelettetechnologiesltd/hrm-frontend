@@ -10,11 +10,11 @@ const Sidebar = () => {
       to: "/employees",
       submenu: [
         { name: "All Employees", to: "/allemployees" },
-        { name: "Holidays", to: "/holidays"  },
-        { name: "Leaves (Admin)", to: "/leave"  },
+        { name: "Holidays", to: "/holidays" },
+        { name: "Leaves (Admin)", to: "/leave" },
         { name: "Attendance", to: "/attendence" },
-        { name: "Departments", to: "/departments"  },
-        { name: "Designations", to: "/designations"  },
+        { name: "Departments", to: "/departments" },
+        { name: "Designations", to: "/designations" },
       ],
     },
   ];
@@ -23,11 +23,11 @@ const Sidebar = () => {
       <div className="sidebar-menu">
         <ul>
           {menuItems.map((menuItem, index) => (
-            <MenuItem 
-            key={index}
-            name={menuItem.name}
-            to={menuItem.to}
-            submenu={menuItem.submenu}
+            <MenuItem
+              key={index}
+              name={menuItem.name}
+              to={menuItem.to}
+              submenu={menuItem.submenu}
             />
           ))}
         </ul>
