@@ -5,6 +5,7 @@ import { Container, Row, Col, Card, CardBody, CardTitle } from "reactstrap";
 import Apexchart from "../Charts/Apexchart";
 import Chartapex from "../Charts/Chartapex";
 import Sidebar from "../Layout/Sidebar";
+import CommonCard from "../assets/components/common/CommonCard"
 import {
   FaCubes,
   FaDollarSign,
@@ -32,7 +33,7 @@ const Home = () => {
             <Col md={2}></Col>
             <Col md={10} className="flex-the-shit">
           <Col md={3}>
-            <div className="make-flex-card no-marg-left">
+            <CommonCard className="main">
               <div className="icon-bg">
                 <FaCubes />
               </div>
@@ -40,10 +41,10 @@ const Home = () => {
                 <p className="number-card">112</p>
                 <p className="head-card">Projects</p>
               </div>
-            </div>
+              </CommonCard>
           </Col>
           <Col md={3}>
-            <div className="make-flex-card">
+          <CommonCard className="main">
               <div className="icon-bg">
                 <FaDollarSign />
               </div>
@@ -51,10 +52,10 @@ const Home = () => {
                 <p className="number-card">44</p>
                 <p className="head-card">Clients</p>
               </div>
-            </div>
+            </CommonCard>
           </Col>
           <Col md={3}>
-            <div className="make-flex-card">
+          <CommonCard className="main">
               <div className="icon-bg">
                 <FaTasks />
               </div>
@@ -62,10 +63,10 @@ const Home = () => {
                 <p className="number-card">37</p>
                 <p className="head-card">Tasks</p>
               </div>
-            </div>
+            </CommonCard>
           </Col>
           <Col md={3}>
-            <div className="make-flex-card">
+          <CommonCard className="main">
               <div className="icon-bg">
                 <FaUserAlt />
               </div>
@@ -73,7 +74,7 @@ const Home = () => {
                 <p className="number-card">218</p>
                 <p className="head-card">Emloyees</p>
               </div>
-            </div>
+            </CommonCard>
           </Col>
           </Col>
         </Row>

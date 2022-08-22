@@ -14,15 +14,13 @@ import "../assets/css/attendence.css";
 const Attendence = () => {
   return (
     <>
-      <Sidebar/>
     <Container className="attendence">
-   
       <Row>
         <Col lg={2}></Col>
         <Col lg={10}>
           Attendence
           <Breadcrumb>
-            <BreadcrumbItem>Dashboard</BreadcrumbItem>
+            <BreadcrumbItem></BreadcrumbItem>
             <Breadcrumb.Item active>Attendence</Breadcrumb.Item>
           </Breadcrumb>
         </Col>
