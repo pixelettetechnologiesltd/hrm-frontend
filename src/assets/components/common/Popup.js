@@ -5,7 +5,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import Modal from "react-bootstrap/Modal";
 import '../../css/form.css'
 function Popup(props) {
-
   const [startDate, setStartDate] = useState(new Date());
   return (
     <>

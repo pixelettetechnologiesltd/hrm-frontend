@@ -5,7 +5,6 @@ const Register = (state = initialState, { type, payload }) => {
       return {
         state: { ...state, payload },
       };
-      break;
     default:
       return {
         ...state,

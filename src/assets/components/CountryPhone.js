@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 const CountryPhone = () => {
-	const [state,setState]=useState();
+  const [state, setState] = useState();
   return (
     <div>
       <PhoneInput
@@ -14,4 +14,4 @@ const CountryPhone = () => {
   );
 };
 
-export {CountryPhone};
+export { CountryPhone };
