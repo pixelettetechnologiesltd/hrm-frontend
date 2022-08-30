@@ -11,20 +11,26 @@ import {
 } from "react-bootstrap";
 import Sidebar from "../Layout/Sidebar"
 import "../assets/css/attendence.css";
+import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 const Attendence = () => {
   const [users, setUsers] = useState([])
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
+    axios.get('https://jsonplaceholder.typicode.com/users')
       .then(json => {
-        console.log("json", json)
-        setUsers(json)
+        console.log("json", json.data)
+        setUsers(json.data)
       }).catch(err => {
         console.log("error", err)
       })
   }, [])
 
-  console.log(users)
+  const handleDelete = id => {
+    setUsers(users.filter((user) => user.id !== id))
+  }
   return (
     <>
       <Container className="attendence">
@@ -74,24 +80,26 @@ const Attendence = () => {
                 <tr>
                   <th>#</th>
                   <th>Name</th>
-                  <th>userName</th>
-                  <th>email</th>
-                  <th>phone</th>
-                  <th>address</th>
-                  <th>company</th>
+                  <th>UserName</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Company</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 {
                   users.map((user, key) => (
-                    <tr key={key}>
-                      <td>{user.id ? user.id : ""}</td>
+                    <tr key={user.id}>
+                      <td>{user.id ? key + 1 : ""}</td>
                       <td>{user.name ? user.name : ""}</td>
                       <td>{user.username ? user.username : ""}</td>
                       <td>{user.email ? user.email : ""}</td>
                       <td>{user.phone ? user.phone : ""}</td>
                       <td>{user.address.city ? user.address.city : ""}</td>
                       <td>{user.company.name ? user.company.name : ""}</td>
+                      <td><Link to="/home"><FontAwesomeIcon icon={faEdit} /></Link><span onClick={() => handleDelete(user.id)}><FontAwesomeIcon icon={faTrash} /></span></td>
                     </tr>
                   )
                   )
